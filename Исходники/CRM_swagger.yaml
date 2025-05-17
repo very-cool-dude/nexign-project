@@ -1,0 +1,1157 @@
+openapi: 3.0.4
+info:
+  title: Client Management API
+  version: 1.0.0
+  description: API для управления информацией клиентов
+servers:
+  - url: http://localhost:8080/api
+
+tags:
+  - name: Абоненты
+    description: Управление абонентами (создание, обновление, удаление)
+  - name: Тарифы
+    description: Просмотр тарифов
+
+paths:
+  /v1/clients:
+    get:
+      tags:
+        - Абоненты
+      summary: Получить список всех абонентов
+      parameters:
+        - $ref: '#/components/parameters/ClientPage'
+        - $ref: '#/components/parameters/ClientSize'
+      responses:
+        '200':
+          description: Получены данные абонентов
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - message
+                  - details
+                  - data
+                properties:
+                  message:
+                    type: string
+                    example: Успех
+                  details:
+                    type: string
+                    example: Получен список абонентов
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Client'
+        '400':
+          description: Некорректный запрос
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Некорректный запрос
+                  details:
+                    type: string
+                    example: Неверный тип данных или значение
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не авторизован
+                  details:
+                    type: string
+                    example: Требуется авторизация
+        '403':
+          description: Пользователь не имеет прав на доступ к методу
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не имеет прав на доступ к методу
+                  details:
+                    type: string
+                    example: Требуется авторизоваться в роли, имеющей права на метод
+        '404':
+          description: Запись в БД не найдена
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Запись в БД не найдена
+                  details:
+                    type: string
+                    example: Абонент отсутствует в системе
+        '500':
+          description: Непредвиденная ошибка сервера
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Непредвиденная ошибка сервера
+                  details:
+                    type: string
+                    example: Сервер не смог выполнить запрос. Требуется устранение неисправности
+
+    post:
+      tags:
+        - Абоненты
+      summary: Создать нового абонента
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Client'
+      responses:
+        '201':
+          description: Абонент создан
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - message
+                  - details
+                  - data
+                properties:
+                  message:
+                    type: string
+                    example: Успех
+                  details:
+                    type: string
+                    example: Создан новый абонент
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Client'
+        '400':
+          description: Некорректный запрос
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Некорректный запрос
+                  details:
+                    type: string
+                    example: Неверный тип данных или значение или неверный формат ввода
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не авторизован
+                  details:
+                    type: string
+                    example: Требуется авторизация
+        '403':
+          description: Пользователь не имеет прав на доступ к методу
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не имеет прав на доступ к методу
+                  details:
+                    type: string
+                    example: Требуется авторизоваться в роли, имеющей права на метод
+        '500':
+          description: Непредвиденная ошибка сервера
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Непредвиденная ошибка сервера
+                  details:
+                    type: string
+                    example: Сервер не смог выполнить запрос. Требуется устранение неисправности
+
+  /v1/clients/{msisdn}:
+    get:
+      tags:
+        - Абоненты
+      summary: Получить абонента по MSISDN
+      parameters:
+        - $ref: '#/components/parameters/ClientMSISDN'
+      responses:
+        '200':
+          description: Информация об абоненте
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - message
+                  - details
+                  - data
+                properties:
+                  message:
+                    type: string
+                    example: Успех
+                  details:
+                    type: string
+                    example: Получена информация об абоненте
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Client'
+        '400':
+          description: Некорректный запрос
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Некорректный запрос
+                  details:
+                    type: string
+                    example: Неверный тип данных или значение
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не авторизован
+                  details:
+                    type: string
+                    example: Требуется авторизация
+        '403':
+          description: Пользователь не имеет прав на доступ к методу
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не имеет прав на доступ к методу
+                  details:
+                    type: string
+                    example: Требуется авторизоваться в роли, имеющей права на метод
+        '404':
+          description: Запись в БД не найдена
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Запись в БД не найдена
+                  details:
+                    type: string
+                    example: Абонент отсутствует в системе
+        '500':
+          description: Непредвиденная ошибка сервера
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Непредвиденная ошибка сервера
+                  details:
+                    type: string
+                    example: Сервер не смог выполнить запрос. Требуется устранение неисправности
+
+    put:
+      tags:
+        - Абоненты
+      summary: Обновить данные абонента
+      parameters:
+        - $ref: '#/components/parameters/ClientMSISDN'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Client'
+      responses:
+        '200':
+          description: Абонент обновлён
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - message
+                  - details
+                  - data
+                properties:
+                  message:
+                    type: string
+                    example: Успех
+                  details:
+                    type: string
+                    example: Данные абонента были обновлены
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Client'
+        '400':
+          description: Некорректный запрос
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Некорректный запрос
+                  details:
+                    type: string
+                    example: Неверный тип данных или значение
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не авторизован
+                  details:
+                    type: string
+                    example: Требуется авторизация
+        '403':
+          description: Пользователь не имеет прав на доступ к методу
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не имеет прав на доступ к методу
+                  details:
+                    type: string
+                    example: Требуется авторизоваться в роли, имеющей права на метод
+        '404':
+          description: Запись в БД не найдена
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Запись в БД не найдена
+                  details:
+                    type: string
+                    example: Абонент отсутствует в системе
+        '500':
+          description: Непредвиденная ошибка сервера
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Непредвиденная ошибка сервера
+                  details:
+                    type: string
+                    example: Сервер не смог выполнить запрос. Требуется устранение неисправности
+
+    delete:
+      tags:
+        - Абоненты
+      summary: Удалить абонента
+      parameters:
+        - $ref: '#/components/parameters/ClientMSISDN'
+      responses:
+        '204':
+          description: Абонент удален
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Абонент удалён
+                  details:
+                    type: string
+                    example: Абонент был удалён из системы
+        '400':
+          description: Некорректный запрос
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Некорректный запрос
+                  details:
+                    type: string
+                    example: Неверный тип данных или значение
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не авторизован
+                  details:
+                    type: string
+                    example: Требуется авторизация
+        '403':
+          description: Пользователь не имеет прав на доступ к методу
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не имеет прав на доступ к методу
+                  details:
+                    type: string
+                    example: Требуется авторизоваться в роли, имеющей права на метод
+        '404':
+          description: Запись в БД не найдена
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Запись в БД не найдена
+                  details:
+                    type: string
+                    example: Абонент отсутствует в системе
+        '500':
+          description: Непредвиденная ошибка сервера
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Непредвиденная ошибка сервера
+                  details:
+                    type: string
+                    example: Сервер не смог выполнить запрос. Требуется устранение неисправности
+
+  /v1/clients/{msisdn}/balance:
+    get:
+      tags:
+        - Абоненты
+      summary: Получить баланс абонента
+      parameters:
+        - $ref: '#/components/parameters/ClientMSISDN'
+      responses:
+        '200':
+          description: Успех
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - message
+                  - details
+                  - money
+                properties:
+                  message:
+                    type: string
+                    example: Успех
+                  details:
+                    type: string
+                    example: Получен баланс абонента
+                  money:
+                    type: number
+                    format: float
+                    example: 100.5
+        '400':
+          description: Некорректный запрос
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Некорректный запрос
+                  details:
+                    type: string
+                    example: Неверный тип данных или значение
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не авторизован
+                  details:
+                    type: string
+                    example: Требуется авторизация
+        '403':
+          description: Пользователь не имеет прав на доступ к методу
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не имеет прав на доступ к методу
+                  details:
+                    type: string
+                    example: Требуется авторизоваться в роли, имеющей права на метод
+        '404':
+          description: Запись в БД не найдена
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Запись в БД не найдена
+                  details:
+                    type: string
+                    example: Абонент отсутствует в системе
+        '500':
+          description: Непредвиденная ошибка сервера
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Непредвиденная ошибка сервера
+                  details:
+                    type: string
+                    example: Сервер не смог выполнить запрос. Требуется устранение неисправности
+
+    patch:
+      tags:
+        - Абоненты
+      summary: Изменить баланс абонента
+      parameters:
+        - $ref: '#/components/parameters/ClientMSISDN'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                change:
+                  type: number
+                  format: float
+      responses:
+        '200':
+          description: Успех
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Успех
+                  details:
+                    type: string
+                    example: Баланс абонента изменён
+                  money:
+                    type: number
+                    format: float
+        '400':
+          description: Некорректный запрос
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Некорректный запрос
+                  details:
+                    type: string
+                    example: Неверный тип данных или значение
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не авторизован
+                  details:
+                    type: string
+                    example: Требуется авторизация
+        '403':
+          description: Пользователь не имеет прав на доступ к методу
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не имеет прав на доступ к методу
+                  details:
+                    type: string
+                    example: Требуется авторизоваться в роли, имеющей права на метод
+        '404':
+          description: Запись в БД не найдена
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Запись в БД не найдена
+                  details:
+                    type: string
+                    example: Абонент отсутствует в системе
+        '500':
+          description: Непредвиденная ошибка сервера
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Непредвиденная ошибка сервера
+                  details:
+                    type: string
+                    example: Сервер не смог выполнить запрос. Требуется устранение неисправности
+
+  /v1/clients/{msisdn}/tariff:
+    get: 
+      tags:
+        - Абоненты
+      summary: Получить тариф абонента
+      parameters:
+        - $ref: '#/components/parameters/ClientMSISDN'
+      responses:
+        '200':
+          description: Успех
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Успех
+                  details:
+                    type: string
+                    example: Получен тариф абонента
+                  tariffId:
+                    type: integer
+                  tariffName:
+                    type: string
+        '400':
+          description: Некорректный запрос
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Некорректный запрос
+                  details:
+                    type: string
+                    example: Неверный тип данных или значение
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не авторизован
+                  details:
+                    type: string
+                    example: Требуется авторизация
+        '403':
+          description: Пользователь не имеет прав на доступ к методу
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не имеет прав на доступ к методу
+                  details:
+                    type: string
+                    example: Требуется авторизоваться в роли, имеющей права на метод
+        '404':
+          description: Запись в БД не найдена
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Запись в БД не найдена
+                  details:
+                    type: string
+                    example: Абонент отсутствует в системе
+        '500':
+          description: Непредвиденная ошибка сервера
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Непредвиденная ошибка сервера
+                  details:
+                    type: string
+                    example: Сервер не смог выполнить запрос. Требуется устранение неисправности
+
+    patch:
+      tags:
+        - Абоненты
+      summary: Изменить тариф абонента
+      parameters:
+        - $ref: '#/components/parameters/ClientMSISDN'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tariffName:
+                  type: integer
+      responses:
+        '200':
+          description: Тариф изменен
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Успех
+                  details:
+                    type: string
+                    example: Получен тариф абонента
+                  tariffId:
+                    type: integer
+                  tariffName:
+                    type: string
+        '400':
+          description: Некорректный запрос
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Некорректный запрос
+                  details:
+                    type: string
+                    example: Неверный тип данных или значение
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не авторизован
+                  details:
+                    type: string
+                    example: Требуется авторизация
+        '403':
+          description: Пользователь не имеет прав на доступ к методу
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не имеет прав на доступ к методу
+                  details:
+                    type: string
+                    example: Требуется авторизоваться в роли, имеющей права на метод
+        '404':
+          description: Запись в БД не найдена
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Запись в БД не найдена
+                  details:
+                    type: string
+                    example: Абонент отсутствует в системе
+        '500':
+          description: Непредвиденная ошибка сервера
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Непредвиденная ошибка сервера
+                  details:
+                    type: string
+                    example: Сервер не смог выполнить запрос. Требуется устранение неисправности
+
+  /v1/tariffs/{tariffId}:
+    get:
+      tags:
+        - Тарифы
+      summary: Получить информацию о тарифе
+      parameters:
+        - $ref: '#/components/parameters/TariffId'
+      responses:
+        '200':
+          description: Тариф
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Успех
+                  details:
+                    type: string
+                    example: Получены данные тарифа
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        tariffId:
+                          type: integer
+                          example: 1
+                        tariffName:
+                          type: string
+                          example: Помесячный Россия
+                        access:
+                          type: string
+                          example: Открытый
+                        region:
+                          type: string
+                          example: Россия
+                        status:
+                          type: string
+                          example: Активный
+                        paymentType:
+                          type: string
+                          example: Помесячный
+                        currency:
+                          type: string
+                          example: Рубль
+                        price:
+                          type: number
+                          format: float
+                          example: 50.0
+        '400':
+          description: Некорректный запрос
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Некорректный запрос
+                  details:
+                    type: string
+                    example: Неверный тип данных или значение
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не авторизован
+                  details:
+                    type: string
+                    example: Требуется авторизация
+        '403':
+          description: Пользователь не имеет прав на доступ к методу
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не имеет прав на доступ к методу
+                  details:
+                    type: string
+                    example: Требуется авторизоваться в роли, имеющей права на метод
+        '404':
+          description: Запись в БД не найдена
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Запись в БД не найдена
+                  details:
+                    type: string
+                    example: Абонент отсутствует в системе
+        '500':
+          description: Непредвиденная ошибка сервера
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Непредвиденная ошибка сервера
+                  details:
+                    type: string
+                    example: Сервер не смог выполнить запрос. Требуется устранение неисправности
+
+  /v1/tariffs/{tariffName}:
+    get:
+      tags:
+        - Тарифы
+      summary: Получить информацию о тарифе
+      parameters:
+        - $ref: '#/components/parameters/TariffName'
+      responses:
+        '200':
+          description: Тариф
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Успех
+                  details:
+                    type: string
+                    example: Получены данные тарифа
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        tariffId:
+                          type: integer
+                          example: 1
+                        tariffName:
+                          type: string
+                          example: Помесячный Россия
+                        access:
+                          type: string
+                          example: Открытый
+                        region:
+                          type: string
+                          example: Россия
+                        status:
+                          type: string
+                          example: Активный
+                        paymentType:
+                          type: string
+                          example: Помесячный
+                        currency:
+                          type: string
+                          example: Рубль
+                        price:
+                          type: number
+                          format: float
+                          example: 50.0
+
+        '400':
+          description: Некорректный запрос
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Некорректный запрос
+                  details:
+                    type: string
+                    example: Неверный тип данных или значение
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не авторизован
+                  details:
+                    type: string
+                    example: Требуется авторизация
+        '403':
+          description: Пользователь не имеет прав на доступ к методу
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Пользователь не имеет прав на доступ к методу
+                  details:
+                    type: string
+                    example: Требуется авторизоваться в роли, имеющей права на метод
+        '404':
+          description: Запись в БД не найдена
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Запись в БД не найдена
+                  details:
+                    type: string
+                    example: Абонент отсутствует в системе
+        '500':
+          description: Непредвиденная ошибка сервера
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Непредвиденная ошибка сервера
+                  details:
+                    type: string
+                    example: Сервер не смог выполнить запрос. Требуется устранение неисправности
+
+components:
+  parameters:
+    ClientMSISDN:
+      name: msisdn
+      in: path
+      required: true
+      schema:
+        type: integer
+        pattern: '^[0-9]{11}$'
+      description: Номер телефона, записанный числом (11 цифр)
+    ClientPage:
+      name: page
+      in: query
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+      description: Номер страницы
+    ClientSize:
+      name: size
+      in: query
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+      description: Количество элементов на странице (чтобы не перегрузить клиента количеством полученных данных)
+    TariffName:
+      name: tariffName
+      in: path
+      required: true
+      description: Название тарифа
+      schema:
+        type: string
+    TariffId:
+      name: tariffId
+      in: path
+      required: true
+      description: Id тарифа
+      schema:
+        type: integer
+
+  schemas:
+    Client:
+      type: object
+      required:
+        - msisdn
+        - money
+        - tariffId
+      properties:
+        id:
+          type: integer
+        msisdn:
+          type: integer
+          example: 79001234567
+        money:
+          type: number
+          format: float
+          example: 100.5
+        tariffId:
+          type: integer
+          example: 2
