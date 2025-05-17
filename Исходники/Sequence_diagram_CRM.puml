@@ -1,0 +1,184 @@
+@startuml Sequence diagram CRM
+
+participant BRT as b
+participant HRS as h
+participant CRM as c
+actor Manager as m
+actor User as u
+
+
+
+title: Sequence diagram CRM
+autonumber
+m -> c: Запрос на получение полной информации об абоненте
+activate c
+c -> b: GET /v1/clients/{msisdn}
+note left: Запрос данных об абоненте
+activate b
+    alt #LightGreen Успех
+        b --> c: Ответ 200 ОК
+    else #Tomato Некорректный запрос (неверный тип данных или значения)
+        autonumber 2
+        b --> c: Ответ 400 Bad Request
+    else #Tomato Пользователь не авторизован
+        autonumber 2
+        b --> c: Ответ 401 Unauthorized
+    else #Tomato Пользователь не имеет прав на доступ к методу
+        autonumber 2
+        b --> c: Ответ 403 Forbidden
+    else #Tomato Запись в БД не найдена (поиск по id, но строки нет)
+        autonumber 2
+        b --> c: Ответ 404 Not Found
+    else #Tomato Непредвиденная ошибка сервера
+        autonumber 2
+        b --> c: Ответ 500 Internal Server Error
+        deactivate b
+    end
+
+c -> h: GET /v1/tariffs/{tariffId}
+note left: Запрос данных о тарифе
+activate h
+    alt #LightGreen Успех
+        h --> c: Ответ 200 ОК
+    else #Tomato Некорректный запрос (неверный тип данных или значения)
+        autonumber 2
+        h --> c: Ответ 400 Bad Request
+    else #Tomato Пользователь не авторизован
+        autonumber 2
+        h --> c: Ответ 401 Unauthorized
+    else #Tomato Пользователь не имеет прав на доступ к методу
+        autonumber 2
+        h --> c: Ответ 403 Forbidden
+    else #Tomato Запись в БД не найдена (поиск по id, но строки нет)
+        autonumber 2
+        h --> c: Ответ 404 Not Found
+    else #Tomato Непредвиденная ошибка сервера
+        autonumber 2
+        h --> c: Ответ 500 Internal Server Error
+        deactivate h
+    end
+c --> m: Ответ
+deactivate c
+
+
+
+newpage Sequence diagram BRT: Создание абонента
+autonumber
+m -> c: Запрос на создание абонента
+activate c
+c -> b: POST /v1/clients
+note left: Запрос на создание нового абонента
+activate b
+    alt #LightGreen Успех
+        b --> c: Ответ 200 ОК
+    else #Tomato Некорректный запрос (неверный тип данных или значения)
+        autonumber 2
+        b --> c: Ответ 400 Bad Request
+    else #Tomato Пользователь не авторизован
+        autonumber 2
+        b --> c: Ответ 401 Unauthorized
+    else #Tomato Пользователь не имеет прав на доступ к методу
+        autonumber 2
+        b --> c: Ответ 403 Forbidden
+    else #Tomato Непредвиденная ошибка сервера
+        autonumber 2
+        b --> c: Ответ 500 Internal Server Error
+        deactivate b
+    end
+c --> m: Ответ
+deactivate c
+
+
+
+newpage Sequence diagram BRT: Смена тарифа
+autonumber
+m -> c: Запрос на смену тарифа
+activate c
+c -> b: PATCH /v1/clients/{msisdn}/tariff
+note left: Запрос на смену тарифа
+activate b
+    alt #LightGreen Успех
+        b --> c: Ответ 200 ОК
+    else #Tomato Некорректный запрос (неверный тип данных или значения)
+        autonumber 2
+        b --> c: Ответ 400 Bad Request
+    else #Tomato Пользователь не авторизован
+        autonumber 2
+        b --> c: Ответ 401 Unauthorized
+    else #Tomato Пользователь не имеет прав на доступ к методу
+        autonumber 2
+        b --> c: Ответ 403 Forbidden
+    else #Tomato Запись в БД не найдена (поиск по id, но строки нет)
+        autonumber 2
+        b --> c: Ответ 404 Not Found
+    else #Tomato Непредвиденная ошибка сервера
+        autonumber 2
+        b --> c: Ответ 500 Internal Server Error
+        deactivate b
+    end
+c --> m: Ответ
+deactivate c
+
+
+
+newpage Sequence diagram BRT: Пополнение баланса (Менеджер)
+autonumber
+m -> c: Запрос на пополнение баланса
+activate c
+c -> b: PATCH /v1/clients/{msisdn}/balance
+note left: Запрос на пополнение баланса
+activate b
+    alt #LightGreen Успех
+        b --> c: Ответ 200 ОК
+    else #Tomato Некорректный запрос (неверный тип данных или значения)
+        autonumber 2
+        b --> c: Ответ 400 Bad Request
+    else #Tomato Пользователь не авторизован
+        autonumber 2
+        b --> c: Ответ 401 Unauthorized
+    else #Tomato Пользователь не имеет прав на доступ к методу
+        autonumber 2
+        b --> c: Ответ 403 Forbidden
+    else #Tomato Запись в БД не найдена (поиск по id, но строки нет)
+        autonumber 2
+        b --> c: Ответ 404 Not Found
+    else #Tomato Непредвиденная ошибка сервера
+        autonumber 2
+        b --> c: Ответ 500 Internal Server Error
+        deactivate b
+    end
+c --> m: Ответ
+deactivate c
+
+
+
+newpage Sequence diagram BRT: Пополнение баланса (Абонент)
+autonumber
+u -> c: Запрос на пополнение баланса
+activate c
+c -> b: PATCH /v1/clients/{msisdn}/balance
+note left: Запрос на пополнение баланса
+activate b
+    alt #LightGreen Успех
+        b --> c: Ответ 200 ОК
+    else #Tomato Некорректный запрос (неверный тип данных или значения)
+        autonumber 2
+        b --> c: Ответ 400 Bad Request
+    else #Tomato Пользователь не авторизован
+        autonumber 2
+        b --> c: Ответ 401 Unauthorized
+    else #Tomato Пользователь не имеет прав на доступ к методу
+        autonumber 2
+        b --> c: Ответ 403 Forbidden
+    else #Tomato Запись в БД не найдена (поиск по id, но строки нет)
+        autonumber 2
+        b --> c: Ответ 404 Not Found
+    else #Tomato Непредвиденная ошибка сервера
+        autonumber 2
+        b --> c: Ответ 500 Internal Server Error
+        deactivate b
+    end
+c --> u: Ответ
+deactivate c
+
+@enduml

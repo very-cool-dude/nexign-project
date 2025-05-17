@@ -1,0 +1,163 @@
+@startuml Sequence diagram BRT
+
+participant CDR as cdr
+queue Queue1 as q1
+database DB_BRT as db_b
+participant "**BRT**" as b
+queue Queue2 as q2
+participant HRS as h
+queue Queue3 as q3
+participant CRM as c
+
+
+
+title: Sequence diagram BRT: Обработка звонков
+autonumber
+activate cdr
+cdr ->> q1: postCDR()
+note left: Запрос на обработку файла CDR
+deactivate cdr
+activate q1
+q1 ->> b: postCDR()
+deactivate q1
+activate b
+b ->> q2: getCallCost(call_info)
+note left: Запрос на расчёт стоимости звонка
+activate q2
+q2 ->> h: getCallCost(call_info)
+deactivate q2
+activate h
+h ->> q3: patchBalance(call_cost)
+note left: Запрос на изменение баланса абонента
+deactivate h
+activate q3
+q3 ->> b: patchBalance(call_cost)
+deactivate q3
+deactivate b
+
+
+
+newpage Sequence diagram BRT: Получение информации об абоненте
+autonumber
+activate c
+c -> b: GET /v1/clients/{msisdn}
+note left: Запрос данных об абоненте
+activate b
+    alt #LightGreen Успех
+        b -> db_b: getClientInfo()
+        note right: Запрос на извлечение данных из БД
+        activate db_b
+        db_b --> b: Ответ
+        deactivate db_b
+        b --> c: Ответ 200 ОК
+    else #Tomato Некорректный запрос (неверный тип данных или значения)
+        autonumber 2
+        b --> c: Ответ 400 Bad Request
+    else #Tomato Пользователь не авторизован
+        autonumber 2
+        b --> c: Ответ 401 Unauthorized
+    else #Tomato Пользователь не имеет прав на доступ к методу
+        autonumber 2
+        b --> c: Ответ 403 Forbidden
+    else #Tomato Запись в БД не найдена (поиск по id, но строки нет)
+        autonumber 2
+        b --> c: Ответ 404 Not Found
+    else #Tomato Непредвиденная ошибка сервера
+        autonumber 2
+        b --> c: Ответ 500 Internal Server Error
+        deactivate b
+    end
+
+
+
+newpage Sequence diagram BRT: Создание абонента
+autonumber
+c -> b: POST /v1/clients
+note left: Запрос на создание нового абонента
+activate b
+    alt #LightGreen Успех
+        b -> db_b: postClient()
+        note right: Запрос на внесение данных в БД
+        activate db_b
+        db_b --> b: Ответ
+        deactivate db_b
+        b --> c: Ответ 201 ОК
+    else #Tomato Некорректный запрос (неверный тип данных или значения)
+        autonumber 2
+        b --> c: Ответ 400 Bad Request
+    else #Tomato Пользователь не авторизован
+        autonumber 2
+        b --> c: Ответ 401 Unauthorized
+    else #Tomato Пользователь не имеет прав на доступ к методу
+        autonumber 2
+        b --> c: Ответ 403 Forbidden
+    else #Tomato Непредвиденная ошибка сервера
+        autonumber 2
+        b --> c: Ответ 500 Internal Server Error
+        deactivate b
+    end
+
+
+
+newpage Sequence diagram BRT: Смена тарифа
+autonumber
+c -> b: PATCH /v1/clients/{msisdn}/tariff
+note left: Запрос на смену тарифа
+activate b
+    alt #LightGreen Успех
+        b -> db_b: patchTariff()
+        note right: Запрос на изменение данных в БД
+        activate db_b
+        db_b --> b: Ответ
+        deactivate db_b
+        b --> c: Ответ 200 ОК
+    else #Tomato Некорректный запрос (неверный тип данных или значения)
+        autonumber 2
+        b --> c: Ответ 400 Bad Request
+    else #Tomato Пользователь не авторизован
+        autonumber 2
+        b --> c: Ответ 401 Unauthorized
+    else #Tomato Пользователь не имеет прав на доступ к методу
+        autonumber 2
+        b --> c: Ответ 403 Forbidden
+    else #Tomato Запись в БД не найдена (поиск по id, но строки нет)
+        autonumber 2
+        b --> c: Ответ 404 Not Found
+    else #Tomato Непредвиденная ошибка сервера
+        autonumber 2
+        b --> c: Ответ 500 Internal Server Error
+        deactivate b
+    end
+
+
+
+newpage Sequence diagram BRT: Пополнение баланса
+autonumber
+c -> b: PATCH /v1/clients/{msisdn}/balance
+note left: Запрос на пополнение баланса
+activate b
+    alt #LightGreen Успех
+        b -> db_b: patchBalance()
+        note right: Запрос на изменение данных в БД
+        activate db_b
+        db_b --> b: Ответ
+        deactivate db_b
+        b --> c: Ответ 200 ОК
+    else #Tomato Некорректный запрос (неверный тип данных или значения)
+        autonumber 2
+        b --> c: Ответ 400 Bad Request
+    else #Tomato Пользователь не авторизован
+        autonumber 2
+        b --> c: Ответ 401 Unauthorized
+    else #Tomato Пользователь не имеет прав на доступ к методу
+        autonumber 2
+        b --> c: Ответ 403 Forbidden
+    else #Tomato Запись в БД не найдена (поиск по id, но строки нет)
+        autonumber 2
+        b --> c: Ответ 404 Not Found
+    else #Tomato Непредвиденная ошибка сервера
+        autonumber 2
+        b --> c: Ответ 500 Internal Server Error
+        deactivate b
+    end
+@enduml

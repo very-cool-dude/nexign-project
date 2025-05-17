@@ -1,0 +1,58 @@
+@startuml Sequence diagram HRS
+
+title: Sequence diagram HRS
+
+autonumber
+
+queue Queue1 as q1
+participant BRT as b
+queue Queue2 as q2
+participant "**HRS**" as h
+database DB_HRS as db_h
+participant CRM as c
+
+activate b
+b ->> q2: getCallCost(call_info)
+activate q2
+note left: Запрос на расчёт стоимости звонка
+q2 ->> h: getCallCost(call_info)
+deactivate q2
+activate h
+h -->> q1: patchBalance(call_cost)
+note left: Запрос на изменение баланса абонента
+deactivate h
+activate q1
+q1 -->> b: patchBalance(call_cost)
+deactivate q1
+deactivate b
+
+
+
+activate c
+c -> h: GET /v1/tariffs/{tariffId}
+note left: Запрос данных о тарифе
+activate h
+    alt #LightGreen Успех
+        h -> db_h: getTariffInfo()
+        note right: Запрос на извлечение данных из БД
+        activate db_h
+        db_h --> h: Ответ
+        deactivate db_h
+        h --> c: Ответ 200 ОК
+    else #Tomato Некорректный запрос (неверный тип данных или значения)
+        autonumber 8
+        h --> c: Ответ 400 Bad Request
+    else #Tomato Пользователь не авторизован
+        autonumber 8
+        h --> c: Ответ 401 Unauthorized
+    else #Tomato Пользователь не имеет прав на доступ к методу
+        autonumber 8
+        h --> c: Ответ 403 Forbidden
+    else #Tomato Запись в БД не найдена (поиск по id, но строки нет)
+        autonumber 8
+        h --> c: Ответ 404 Not Found
+    else #Tomato Непредвиденная ошибка сервера
+        autonumber 8
+        h --> c: Ответ 500 Internal Server Error
+    end
+@enduml
