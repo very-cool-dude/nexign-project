@@ -8,7 +8,7 @@ actor User as u
 
 
 
-title: Sequence diagram CRM
+title: Sequence diagram CRM: Получение данных абонента и тарифа
 autonumber
 m -> c: Запрос на получение полной информации об абоненте
 activate c
@@ -57,6 +57,40 @@ activate h
         h --> c: Ответ 500 Internal Server Error
         deactivate h
     end
+c --> m: Ответ
+deactivate c
+
+
+
+newpage Sequence diagram BRT: Авторизация (Абонент)
+autonumber
+u -> c: Запрос на авторизацию
+activate c
+c -> b: GET /v1/clients/{msisdn}
+note left: Запрос на проверку введённых абонентом данных
+activate b
+    alt #LightGreen Успех
+        b --> c: Ответ 200 ОК
+    else #Tomato Некорректный запрос (неверный тип данных или значения)
+        autonumber 2
+        b --> c: Ответ 400 Bad Request
+    else #Tomato Запись в БД не найдена (поиск по id, но строки нет)
+        autonumber 2
+        b --> c: Ответ 404 Not Found
+    else #Tomato Непредвиденная ошибка сервера
+        autonumber 2
+        b --> c: Ответ 500 Internal Server Error
+        deactivate b
+    end
+c --> u: Ответ
+deactivate c
+
+
+
+newpage Sequence diagram BRT: Авторизация (Менеджер)
+autonumber
+m -> c: Запрос на авторизацию
+activate c
 c --> m: Ответ
 deactivate c
 
