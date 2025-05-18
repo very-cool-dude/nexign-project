@@ -1,0 +1,25 @@
+@startuml Activity diagram
+
+title: Activity diagram
+
+start
+
+skinparam Activity {
+  FontSize 13
+  FontName "Arial Narrow"
+}
+
+:Нажатие кнопки создания нового абонента;
+
+:Заполнение формы регистрации;
+
+if (Введены корректные данные) then (да)
+  :Успешная регистрация;
+else (нет)
+  :Ошибка регистрации;
+  end
+endif
+
+stop
+
+@enduml
