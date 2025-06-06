@@ -1,0 +1,291 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dineug/erd-editor/main/json-schema/schema.json",
+  "version": "3.0.0",
+  "settings": {
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -126.411,
+    "scrollLeft": -40.281,
+    "zoomLevel": 0.67,
+    "show": 487,
+    "database": 4,
+    "databaseName": "CDR",
+    "canvasType": "ERD",
+    "language": 1,
+    "tableNameCase": 4,
+    "columnNameCase": 2,
+    "bracketType": 1,
+    "relationshipDataTypeSync": true,
+    "relationshipOptimization": false,
+    "columnOrder": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "maxWidthComment": -1,
+    "ignoreSaveSettings": 0
+  },
+  "doc": {
+    "tableIds": [
+      "lAxVfgtN_u8FOaWXYmFYQ",
+      "gzV-Pyq9u5pol2gUgBkJk"
+    ],
+    "relationshipIds": [],
+    "indexIds": [],
+    "memoIds": []
+  },
+  "collections": {
+    "tableEntities": {
+      "lAxVfgtN_u8FOaWXYmFYQ": {
+        "id": "lAxVfgtN_u8FOaWXYmFYQ",
+        "name": "callers",
+        "comment": "Таблица всех звонивших людей",
+        "columnIds": [
+          "jtoq_nMcVLAcs71JgVt69",
+          "uUqpcBV-kqzbbSROrGw_7"
+        ],
+        "seqColumnIds": [
+          "jtoq_nMcVLAcs71JgVt69",
+          "uUqpcBV-kqzbbSROrGw_7"
+        ],
+        "ui": {
+          "x": 105,
+          "y": 95,
+          "zIndex": 2,
+          "widthName": 60,
+          "widthComment": 184,
+          "color": "#2196F3"
+        },
+        "meta": {
+          "updateAt": 1746127296318,
+          "createAt": 1746104539853
+        }
+      },
+      "gzV-Pyq9u5pol2gUgBkJk": {
+        "id": "gzV-Pyq9u5pol2gUgBkJk",
+        "name": "calls",
+        "comment": "Таблица всех звонков ",
+        "columnIds": [
+          "fhztg6QJILV0r6ET9HNnR",
+          "UHzeoNm_c-ZanTkHtqVKI",
+          "7sHTnpx2FA7hEyP7Gr9zr",
+          "XMW_KDRAqXF7wHDRRiSjV",
+          "OSLcASrylIR08P98XpQyf",
+          "8u85bYIeFQMRe9UlbKKWl",
+          "T_4kJhfAIA81BnFqh_DdO"
+        ],
+        "seqColumnIds": [
+          "fhztg6QJILV0r6ET9HNnR",
+          "UHzeoNm_c-ZanTkHtqVKI",
+          "7sHTnpx2FA7hEyP7Gr9zr",
+          "XMW_KDRAqXF7wHDRRiSjV",
+          "OSLcASrylIR08P98XpQyf",
+          "8u85bYIeFQMRe9UlbKKWl",
+          "T_4kJhfAIA81BnFqh_DdO"
+        ],
+        "ui": {
+          "x": 105,
+          "y": 237,
+          "zIndex": 5,
+          "widthName": 60,
+          "widthComment": 130,
+          "color": "#FF9800"
+        },
+        "meta": {
+          "updateAt": 1747507602156,
+          "createAt": 1746104572518
+        }
+      }
+    },
+    "tableColumnEntities": {
+      "jtoq_nMcVLAcs71JgVt69": {
+        "id": "jtoq_nMcVLAcs71JgVt69",
+        "tableId": "lAxVfgtN_u8FOaWXYmFYQ",
+        "name": "caller_id",
+        "comment": "(ИД)",
+        "dataType": "INT",
+        "default": "",
+        "options": 14,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746105061060,
+          "createAt": 1746104578103
+        }
+      },
+      "uUqpcBV-kqzbbSROrGw_7": {
+        "id": "uUqpcBV-kqzbbSROrGw_7",
+        "tableId": "lAxVfgtN_u8FOaWXYmFYQ",
+        "name": "msisdn",
+        "comment": "(Номер телефона звонящего)",
+        "dataType": "BIGINT",
+        "default": "",
+        "options": 12,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 169,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746105113289,
+          "createAt": 1746104589314
+        }
+      },
+      "fhztg6QJILV0r6ET9HNnR": {
+        "id": "fhztg6QJILV0r6ET9HNnR",
+        "tableId": "gzV-Pyq9u5pol2gUgBkJk",
+        "name": "call_id",
+        "comment": "(ИД)",
+        "dataType": "INT",
+        "default": "",
+        "options": 14,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746105099509,
+          "createAt": 1746104601071
+        }
+      },
+      "UHzeoNm_c-ZanTkHtqVKI": {
+        "id": "UHzeoNm_c-ZanTkHtqVKI",
+        "tableId": "gzV-Pyq9u5pol2gUgBkJk",
+        "name": "call_type",
+        "comment": "(Тип звонка: входящий - 1 / исходящий - 2)",
+        "dataType": "INT",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 242,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747509294215,
+          "createAt": 1746104608947
+        }
+      },
+      "7sHTnpx2FA7hEyP7Gr9zr": {
+        "id": "7sHTnpx2FA7hEyP7Gr9zr",
+        "tableId": "gzV-Pyq9u5pol2gUgBkJk",
+        "name": "left_msisdn",
+        "comment": "(Номер телефона слева в записи)",
+        "dataType": "BIGINT",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 64,
+          "widthComment": 193,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747509337884,
+          "createAt": 1746104621973
+        }
+      },
+      "XMW_KDRAqXF7wHDRRiSjV": {
+        "id": "XMW_KDRAqXF7wHDRRiSjV",
+        "tableId": "gzV-Pyq9u5pol2gUgBkJk",
+        "name": "right_msisdn",
+        "comment": "(Номер телефона справа в записи)",
+        "dataType": "BIGINT",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 71,
+          "widthComment": 200,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747509344697,
+          "createAt": 1746104632445
+        }
+      },
+      "OSLcASrylIR08P98XpQyf": {
+        "id": "OSLcASrylIR08P98XpQyf",
+        "tableId": "gzV-Pyq9u5pol2gUgBkJk",
+        "name": "start_datetime",
+        "comment": "(Дата и время начала звонка)",
+        "dataType": "DATETIME",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 80,
+          "widthComment": 172,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746105242324,
+          "createAt": 1746104642514
+        }
+      },
+      "8u85bYIeFQMRe9UlbKKWl": {
+        "id": "8u85bYIeFQMRe9UlbKKWl",
+        "tableId": "gzV-Pyq9u5pol2gUgBkJk",
+        "name": "end_datetime",
+        "comment": "(Дата и время начала звонка)",
+        "dataType": "DATETIME",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 75,
+          "widthComment": 172,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746105250521,
+          "createAt": 1746104648759
+        }
+      },
+      "T_4kJhfAIA81BnFqh_DdO": {
+        "id": "T_4kJhfAIA81BnFqh_DdO",
+        "tableId": "gzV-Pyq9u5pol2gUgBkJk",
+        "name": "is_sended",
+        "comment": "(0 - Звонок не отправлен / 1 - Звонок отправлен)",
+        "dataType": "BIT",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 277,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746105415838,
+          "createAt": 1746105361785
+        }
+      }
+    },
+    "relationshipEntities": {},
+    "indexEntities": {},
+    "indexColumnEntities": {},
+    "memoEntities": {}
+  }
+}

@@ -1,0 +1,1339 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dineug/erd-editor/main/json-schema/schema.json",
+  "version": "3.0.0",
+  "settings": {
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": 0,
+    "scrollLeft": 0,
+    "zoomLevel": 1,
+    "show": 487,
+    "database": 16,
+    "databaseName": "BRT",
+    "canvasType": "ERD",
+    "language": 1,
+    "tableNameCase": 4,
+    "columnNameCase": 2,
+    "bracketType": 1,
+    "relationshipDataTypeSync": true,
+    "relationshipOptimization": false,
+    "columnOrder": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "maxWidthComment": -1,
+    "ignoreSaveSettings": 0
+  },
+  "doc": {
+    "tableIds": [
+      "WlTRnfyHK0jO8Pox0Dmlx",
+      "D3CYZ0-C0be4oSjOSi3nK",
+      "yiqqk47lq3AcPMo5u17XB",
+      "93_sbhyLnH0acZVXcAby6",
+      "Hf8jjqssAG_L0evv89ERJ",
+      "Xiz9lg8zDWaOH34saUX0u"
+    ],
+    "relationshipIds": [
+      "z61ll4FKb8kZ28N0AtAZQ",
+      "YdQpj0QPZNKMW6cVXvglL",
+      "yYJxuco7IqTfzvnemMQmO",
+      "cIlcp6qMhoGermJkiBa4k",
+      "5Ba1V3M_D-SLFuCT32rss",
+      "NzBDFdYrMbDYL-b-ZXRkr"
+    ],
+    "indexIds": [],
+    "memoIds": []
+  },
+  "collections": {
+    "tableEntities": {
+      "WlTRnfyHK0jO8Pox0Dmlx": {
+        "id": "WlTRnfyHK0jO8Pox0Dmlx",
+        "name": "calls",
+        "comment": "Таблица звонков наших абонентов",
+        "columnIds": [
+          "5nPps92sq8S8XfWs-sJqz",
+          "x1nr7lvMWNRjqrkv2hCZr",
+          "8us08--h_MM-vgdx1oM5Q",
+          "CrenvVP5c7sTktnDMzIgA",
+          "8r7uoIPvUVNgtTT3gvfha",
+          "J_skQELlFhhkw6p9pRyTN",
+          "V8U-PItk5b5NkWeyf1iEx",
+          "QRVF3Fy99Tg-59vIQepEh",
+          "dSIj_UelDOkSgyOUdcZgq"
+        ],
+        "seqColumnIds": [
+          "5nPps92sq8S8XfWs-sJqz",
+          "x1nr7lvMWNRjqrkv2hCZr",
+          "aPQY47qX2Co0vKzU187Xt",
+          "8us08--h_MM-vgdx1oM5Q",
+          "CrenvVP5c7sTktnDMzIgA",
+          "EAzU01YJlegMA_m_XkdVd",
+          "8r7uoIPvUVNgtTT3gvfha",
+          "J_skQELlFhhkw6p9pRyTN",
+          "Xm3CEIhvJIhp3_47EkPZo",
+          "V8U-PItk5b5NkWeyf1iEx",
+          "QRVF3Fy99Tg-59vIQepEh",
+          "dSIj_UelDOkSgyOUdcZgq",
+          "k6EqPSAiXVQcOocefLd5H"
+        ],
+        "ui": {
+          "x": 23.0692,
+          "y": 402.7889,
+          "zIndex": 2,
+          "widthName": 60,
+          "widthComment": 200,
+          "color": "#4CAF50"
+        },
+        "meta": {
+          "updateAt": 1747476580951,
+          "createAt": 1746100708066
+        }
+      },
+      "D3CYZ0-C0be4oSjOSi3nK": {
+        "id": "D3CYZ0-C0be4oSjOSi3nK",
+        "name": "clients",
+        "comment": "Таблица наших абонентов",
+        "columnIds": [
+          "ygkNboAqHuAeyEFPokXyG",
+          "2wfiYMmWPqpZ0BxnB0io_",
+          "t_kdI1dTD1VPd9ZDTNhNG",
+          "kkAM6ItEBPhXsg2G00EJh",
+          "j-sXvRRhvM9yNNEiaVk7h",
+          "tj_e6Lq-LqBxpNAyWfIRe",
+          "vfmTIkkmgG8QftsCwMdsR",
+          "VeZptkCf7nJwjM-JBQosH",
+          "FyNd7IRUlxI3vEQXVrw3g",
+          "K4CfMjDgJ-N27d9I0soP-",
+          "YIqxgEo991Q2xl-6fT637",
+          "fIuxvwLOEENNmcvzicvID",
+          "dUzwliBimSQ7Pp50z6HqJ"
+        ],
+        "seqColumnIds": [
+          "ygkNboAqHuAeyEFPokXyG",
+          "2wfiYMmWPqpZ0BxnB0io_",
+          "t_kdI1dTD1VPd9ZDTNhNG",
+          "kkAM6ItEBPhXsg2G00EJh",
+          "j-sXvRRhvM9yNNEiaVk7h",
+          "tj_e6Lq-LqBxpNAyWfIRe",
+          "6OT6pDB-0ZbLTXV3jrWBy",
+          "vfmTIkkmgG8QftsCwMdsR",
+          "VeZptkCf7nJwjM-JBQosH",
+          "FyNd7IRUlxI3vEQXVrw3g",
+          "K4CfMjDgJ-N27d9I0soP-",
+          "YIqxgEo991Q2xl-6fT637",
+          "fIuxvwLOEENNmcvzicvID",
+          "dUzwliBimSQ7Pp50z6HqJ"
+        ],
+        "ui": {
+          "x": 839.8965,
+          "y": 360.0596,
+          "zIndex": 25,
+          "widthName": 60,
+          "widthComment": 151,
+          "color": "#FFC107"
+        },
+        "meta": {
+          "updateAt": 1747485807277,
+          "createAt": 1746101021351
+        }
+      },
+      "yiqqk47lq3AcPMo5u17XB": {
+        "id": "yiqqk47lq3AcPMo5u17XB",
+        "name": "client_entities",
+        "comment": "Таблица сущностей клиентов",
+        "columnIds": [
+          "Q3pEaUfp45VqvvLpCKmbg",
+          "spCPA7Fk2sou6ewSxLddV",
+          "VvBHOHceJQI-pdLZ9mmHN",
+          "ZL8NDbHWShr5BonyEV2LO",
+          "iU2HMSxCnXlrR0BHDu214",
+          "QR8yybkFxIE46DsZQgz8_",
+          "nx3qyxXIF4eNgUzVKjXIJ"
+        ],
+        "seqColumnIds": [
+          "Q3pEaUfp45VqvvLpCKmbg",
+          "spCPA7Fk2sou6ewSxLddV",
+          "K0zdnDcr_8lOXepjNHBN8",
+          "VvBHOHceJQI-pdLZ9mmHN",
+          "ZL8NDbHWShr5BonyEV2LO",
+          "iU2HMSxCnXlrR0BHDu214",
+          "QR8yybkFxIE46DsZQgz8_",
+          "nx3qyxXIF4eNgUzVKjXIJ"
+        ],
+        "ui": {
+          "x": 821.9724,
+          "y": 832.2489,
+          "zIndex": 73,
+          "widthName": 76,
+          "widthComment": 169,
+          "color": "#FFC107"
+        },
+        "meta": {
+          "updateAt": 1747485849431,
+          "createAt": 1746101416485
+        }
+      },
+      "93_sbhyLnH0acZVXcAby6": {
+        "id": "93_sbhyLnH0acZVXcAby6",
+        "name": "entity_parameters",
+        "comment": "Таблица параметров сущностей",
+        "columnIds": [
+          "S0AxGMWuC42j-N7r7Ek8d",
+          "KmMKOrdj4STIGXQgyI-Pz",
+          "q5dZ9XUX4AkYFPskumu1e",
+          "M7ijANO0IDagcjZST_wTC"
+        ],
+        "seqColumnIds": [
+          "S0AxGMWuC42j-N7r7Ek8d",
+          "hh8TeOLDfcoqh437MF4VP",
+          "KmMKOrdj4STIGXQgyI-Pz",
+          "q5dZ9XUX4AkYFPskumu1e",
+          "M7ijANO0IDagcjZST_wTC"
+        ],
+        "ui": {
+          "x": 1139.9628,
+          "y": 1156.9506,
+          "zIndex": 103,
+          "widthName": 98,
+          "widthComment": 184,
+          "color": "#FFC107"
+        },
+        "meta": {
+          "updateAt": 1747486087092,
+          "createAt": 1746101521819
+        }
+      },
+      "Hf8jjqssAG_L0evv89ERJ": {
+        "id": "Hf8jjqssAG_L0evv89ERJ",
+        "name": "operators",
+        "comment": "Таблица операторов, которых мы обслуживаем",
+        "columnIds": [
+          "mQrJpG0sEh2a0ZHWyuTvV",
+          "CfzE7Cp_wrotC2R3m8sDc"
+        ],
+        "seqColumnIds": [
+          "mQrJpG0sEh2a0ZHWyuTvV",
+          "CfzE7Cp_wrotC2R3m8sDc"
+        ],
+        "ui": {
+          "x": 263.1818,
+          "y": 774.8226,
+          "zIndex": 104,
+          "widthName": 60,
+          "widthComment": 273,
+          "color": "#4CAF50"
+        },
+        "meta": {
+          "updateAt": 1747485854546,
+          "createAt": 1747421845255
+        }
+      },
+      "Xiz9lg8zDWaOH34saUX0u": {
+        "id": "Xiz9lg8zDWaOH34saUX0u",
+        "name": "call_types",
+        "comment": "Таблица типов звонков",
+        "columnIds": [
+          "_2r-tiMVwLV9pptbXQCoy",
+          "oEJm-tYTNQXWuxHfNZV2j"
+        ],
+        "seqColumnIds": [
+          "_2r-tiMVwLV9pptbXQCoy",
+          "oEJm-tYTNQXWuxHfNZV2j",
+          "Fpvb7XEsjZhhmKKvvkVBy"
+        ],
+        "ui": {
+          "x": 165.2632,
+          "y": 198.8072,
+          "zIndex": 136,
+          "widthName": 60,
+          "widthComment": 135,
+          "color": "#4CAF50"
+        },
+        "meta": {
+          "updateAt": 1747485862797,
+          "createAt": 1747476441888
+        }
+      }
+    },
+    "tableColumnEntities": {
+      "5nPps92sq8S8XfWs-sJqz": {
+        "id": "5nPps92sq8S8XfWs-sJqz",
+        "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+        "name": "call_id",
+        "comment": "(ИД)",
+        "dataType": "int",
+        "default": "",
+        "options": 14,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746103583621,
+          "createAt": 1746100723770
+        }
+      },
+      "aPQY47qX2Co0vKzU187Xt": {
+        "id": "aPQY47qX2Co0vKzU187Xt",
+        "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+        "name": "call_type_id",
+        "comment": "(Тип звонка: входящий - 01 / исходящий - 02)",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 66,
+          "widthComment": 252,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747476438938,
+          "createAt": 1746100737089
+        }
+      },
+      "8us08--h_MM-vgdx1oM5Q": {
+        "id": "8us08--h_MM-vgdx1oM5Q",
+        "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+        "name": "left_msisdn",
+        "comment": "(Номер телефона слева в записи)",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 64,
+          "widthComment": 193,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747475364729,
+          "createAt": 1746100750328
+        }
+      },
+      "8r7uoIPvUVNgtTT3gvfha": {
+        "id": "8r7uoIPvUVNgtTT3gvfha",
+        "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+        "name": "right_msisdn",
+        "comment": "(Номер телефона справа в записи)",
+        "dataType": "bigint",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 71,
+          "widthComment": 200,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747475377082,
+          "createAt": 1746100763964
+        }
+      },
+      "V8U-PItk5b5NkWeyf1iEx": {
+        "id": "V8U-PItk5b5NkWeyf1iEx",
+        "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+        "name": "start_datetime",
+        "comment": "(Дата и время начала звонка)",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 80,
+          "widthComment": 172,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746104969849,
+          "createAt": 1746100773819
+        }
+      },
+      "QRVF3Fy99Tg-59vIQepEh": {
+        "id": "QRVF3Fy99Tg-59vIQepEh",
+        "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+        "name": "end_datetime",
+        "comment": "(Дата и время окончания звонка)",
+        "dataType": "datetime",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 75,
+          "widthComment": 193,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746104972720,
+          "createAt": 1746100792000
+        }
+      },
+      "dSIj_UelDOkSgyOUdcZgq": {
+        "id": "dSIj_UelDOkSgyOUdcZgq",
+        "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+        "name": "is_tarifficated",
+        "comment": "(0 - Звонок не тарифицирован / 1 - Звонок тарифицирован)",
+        "dataType": "bit",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 74,
+          "widthComment": 337,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746105438004,
+          "createAt": 1746100811484
+        }
+      },
+      "ygkNboAqHuAeyEFPokXyG": {
+        "id": "ygkNboAqHuAeyEFPokXyG",
+        "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+        "name": "client_id",
+        "comment": "(ИД)",
+        "dataType": "int",
+        "default": "",
+        "options": 14,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746103573374,
+          "createAt": 1746101272067
+        }
+      },
+      "2wfiYMmWPqpZ0BxnB0io_": {
+        "id": "2wfiYMmWPqpZ0BxnB0io_",
+        "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+        "name": "msisdn",
+        "comment": "(Номер телефона абонента)",
+        "dataType": "bigint",
+        "default": "",
+        "options": 12,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 160,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746103417048,
+          "createAt": 1746101278459
+        }
+      },
+      "t_kdI1dTD1VPd9ZDTNhNG": {
+        "id": "t_kdI1dTD1VPd9ZDTNhNG",
+        "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+        "name": "last_name",
+        "comment": "(Фамилия абонента)",
+        "dataType": "varchar(30)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 118,
+          "widthDataType": 63,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747483799095,
+          "createAt": 1746101285008
+        }
+      },
+      "kkAM6ItEBPhXsg2G00EJh": {
+        "id": "kkAM6ItEBPhXsg2G00EJh",
+        "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+        "name": "first_name",
+        "comment": "(Имя абонента)",
+        "dataType": "varchar(30)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 90,
+          "widthDataType": 63,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746103443523,
+          "createAt": 1746101290741
+        }
+      },
+      "j-sXvRRhvM9yNNEiaVk7h": {
+        "id": "j-sXvRRhvM9yNNEiaVk7h",
+        "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+        "name": "middle_name",
+        "comment": "(Отчество абонента)",
+        "dataType": "varchar(30)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 74,
+          "widthComment": 118,
+          "widthDataType": 63,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746103454027,
+          "createAt": 1746101300337
+        }
+      },
+      "vfmTIkkmgG8QftsCwMdsR": {
+        "id": "vfmTIkkmgG8QftsCwMdsR",
+        "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+        "name": "registration_date",
+        "comment": "(Дата регистрации)",
+        "dataType": "date",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 92,
+          "widthComment": 112,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746103477450,
+          "createAt": 1746101311084
+        }
+      },
+      "FyNd7IRUlxI3vEQXVrw3g": {
+        "id": "FyNd7IRUlxI3vEQXVrw3g",
+        "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+        "name": "balance",
+        "comment": "(Баланс абонента)",
+        "dataType": "decimal(10,1)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 106,
+          "widthDataType": 75,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746103493136,
+          "createAt": 1746101323571
+        }
+      },
+      "K4CfMjDgJ-N27d9I0soP-": {
+        "id": "K4CfMjDgJ-N27d9I0soP-",
+        "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+        "name": "balance_currency_id",
+        "comment": "(ИД валюты баланса)",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 110,
+          "widthComment": 126,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746103924895,
+          "createAt": 1746101341718
+        }
+      },
+      "YIqxgEo991Q2xl-6fT637": {
+        "id": "YIqxgEo991Q2xl-6fT637",
+        "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+        "name": "region_id",
+        "comment": "(ИД региона абонента)",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 132,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746103934803,
+          "createAt": 1746101354805
+        }
+      },
+      "Q3pEaUfp45VqvvLpCKmbg": {
+        "id": "Q3pEaUfp45VqvvLpCKmbg",
+        "tableId": "yiqqk47lq3AcPMo5u17XB",
+        "name": "client_entity_id",
+        "comment": "(ИД)",
+        "dataType": "int",
+        "default": "",
+        "options": 14,
+        "ui": {
+          "keys": 1,
+          "widthName": 81,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746103857858,
+          "createAt": 1746101431629
+        }
+      },
+      "K0zdnDcr_8lOXepjNHBN8": {
+        "id": "K0zdnDcr_8lOXepjNHBN8",
+        "tableId": "yiqqk47lq3AcPMo5u17XB",
+        "name": "client_id",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746101450871,
+          "createAt": 1746101445902
+        }
+      },
+      "VvBHOHceJQI-pdLZ9mmHN": {
+        "id": "VvBHOHceJQI-pdLZ9mmHN",
+        "tableId": "yiqqk47lq3AcPMo5u17XB",
+        "name": "entity_instance_id",
+        "comment": "(ИД сущности)",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 97,
+          "widthComment": 86,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746103953792,
+          "createAt": 1746101452529
+        }
+      },
+      "ZL8NDbHWShr5BonyEV2LO": {
+        "id": "ZL8NDbHWShr5BonyEV2LO",
+        "tableId": "yiqqk47lq3AcPMo5u17XB",
+        "name": "entity_type_id",
+        "comment": "(ИД типа сущности: тариф / пакет звонков / пакет минут и т.д.)",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 75,
+          "widthComment": 360,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746103987538,
+          "createAt": 1746101470519
+        }
+      },
+      "iU2HMSxCnXlrR0BHDu214": {
+        "id": "iU2HMSxCnXlrR0BHDu214",
+        "tableId": "yiqqk47lq3AcPMo5u17XB",
+        "name": "priority",
+        "comment": "(Приоритет сущности: После исчерпания лимита ресурса сущность заменяется на другую с более низким приоритетом)",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 684,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747484632914,
+          "createAt": 1746101487989
+        }
+      },
+      "QR8yybkFxIE46DsZQgz8_": {
+        "id": "QR8yybkFxIE46DsZQgz8_",
+        "tableId": "yiqqk47lq3AcPMo5u17XB",
+        "name": "entity_activation_date",
+        "comment": "(Дата активации сущности)",
+        "dataType": "date",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 118,
+          "widthComment": 159,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746104145442,
+          "createAt": 1746101493534
+        }
+      },
+      "nx3qyxXIF4eNgUzVKjXIJ": {
+        "id": "nx3qyxXIF4eNgUzVKjXIJ",
+        "tableId": "yiqqk47lq3AcPMo5u17XB",
+        "name": "period_payment_date",
+        "comment": "(Дата оплаты сущности)",
+        "dataType": "date",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 116,
+          "widthComment": 141,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746104154821,
+          "createAt": 1746101505126
+        }
+      },
+      "S0AxGMWuC42j-N7r7Ek8d": {
+        "id": "S0AxGMWuC42j-N7r7Ek8d",
+        "tableId": "93_sbhyLnH0acZVXcAby6",
+        "name": "entity_parameter_id",
+        "comment": "(ИД)",
+        "dataType": "int",
+        "default": "",
+        "options": 14,
+        "ui": {
+          "keys": 1,
+          "widthName": 107,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746104162454,
+          "createAt": 1746101532584
+        }
+      },
+      "hh8TeOLDfcoqh437MF4VP": {
+        "id": "hh8TeOLDfcoqh437MF4VP",
+        "tableId": "93_sbhyLnH0acZVXcAby6",
+        "name": "client_entity_id",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 85,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746101554318,
+          "createAt": 1746101542261
+        }
+      },
+      "q5dZ9XUX4AkYFPskumu1e": {
+        "id": "q5dZ9XUX4AkYFPskumu1e",
+        "tableId": "93_sbhyLnH0acZVXcAby6",
+        "name": "parameter_instance_id",
+        "comment": "(ИД параметра)",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 123,
+          "widthComment": 92,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746104215631,
+          "createAt": 1746101557245
+        }
+      },
+      "M7ijANO0IDagcjZST_wTC": {
+        "id": "M7ijANO0IDagcjZST_wTC",
+        "tableId": "93_sbhyLnH0acZVXcAby6",
+        "name": "parameter_value",
+        "comment": "(Количество оставшихся ресурсов)",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 90,
+          "widthComment": 202,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746104243341,
+          "createAt": 1746101569991
+        }
+      },
+      "spCPA7Fk2sou6ewSxLddV": {
+        "id": "spCPA7Fk2sou6ewSxLddV",
+        "tableId": "yiqqk47lq3AcPMo5u17XB",
+        "name": "client_id",
+        "comment": "(ИД абонента)",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 60,
+          "widthComment": 83,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746103894327,
+          "createAt": 1746101641847
+        }
+      },
+      "KmMKOrdj4STIGXQgyI-Pz": {
+        "id": "KmMKOrdj4STIGXQgyI-Pz",
+        "tableId": "93_sbhyLnH0acZVXcAby6",
+        "name": "client_entity_id",
+        "comment": "(ИД сущности)",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 81,
+          "widthComment": 86,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1746104178973,
+          "createAt": 1746101836732
+        }
+      },
+      "mQrJpG0sEh2a0ZHWyuTvV": {
+        "id": "mQrJpG0sEh2a0ZHWyuTvV",
+        "tableId": "Hf8jjqssAG_L0evv89ERJ",
+        "name": "operator_id",
+        "comment": "(ИД)",
+        "dataType": "int",
+        "default": "",
+        "options": 14,
+        "ui": {
+          "keys": 1,
+          "widthName": 62,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747485761842,
+          "createAt": 1747421856292
+        }
+      },
+      "CfzE7Cp_wrotC2R3m8sDc": {
+        "id": "CfzE7Cp_wrotC2R3m8sDc",
+        "tableId": "Hf8jjqssAG_L0evv89ERJ",
+        "name": "operator_name",
+        "comment": "(Название оператора)",
+        "dataType": "varchar(30)",
+        "default": "",
+        "options": 4,
+        "ui": {
+          "keys": 0,
+          "widthName": 83,
+          "widthComment": 127,
+          "widthDataType": 63,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747485767959,
+          "createAt": 1747421869125
+        }
+      },
+      "EAzU01YJlegMA_m_XkdVd": {
+        "id": "EAzU01YJlegMA_m_XkdVd",
+        "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+        "name": "caller_operator_id",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 101,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747421995858,
+          "createAt": 1747421985775
+        }
+      },
+      "Xm3CEIhvJIhp3_47EkPZo": {
+        "id": "Xm3CEIhvJIhp3_47EkPZo",
+        "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+        "name": "receiver_operator_id",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 115,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747422006311,
+          "createAt": 1747421998679
+        }
+      },
+      "6OT6pDB-0ZbLTXV3jrWBy": {
+        "id": "6OT6pDB-0ZbLTXV3jrWBy",
+        "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+        "name": "operator_id",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 65,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747422037902,
+          "createAt": 1747422033158
+        }
+      },
+      "CrenvVP5c7sTktnDMzIgA": {
+        "id": "CrenvVP5c7sTktnDMzIgA",
+        "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+        "name": "left_operator_id",
+        "comment": "(ИД оператора номера слева)",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 85,
+          "widthComment": 171,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747476423526,
+          "createAt": 1747422378509
+        }
+      },
+      "J_skQELlFhhkw6p9pRyTN": {
+        "id": "J_skQELlFhhkw6p9pRyTN",
+        "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+        "name": "right_operator_id",
+        "comment": "(ИД оператора номера справа)",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 92,
+          "widthComment": 178,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747476423526,
+          "createAt": 1747422401626
+        }
+      },
+      "tj_e6Lq-LqBxpNAyWfIRe": {
+        "id": "tj_e6Lq-LqBxpNAyWfIRe",
+        "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+        "name": "operator_id",
+        "comment": "(ИД оператора абонента)",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 62,
+          "widthComment": 145,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747483517579,
+          "createAt": 1747422709713
+        }
+      },
+      "_2r-tiMVwLV9pptbXQCoy": {
+        "id": "_2r-tiMVwLV9pptbXQCoy",
+        "tableId": "Xiz9lg8zDWaOH34saUX0u",
+        "name": "call_type_id",
+        "comment": "(ИД)",
+        "dataType": "int",
+        "default": "",
+        "options": 14,
+        "ui": {
+          "keys": 1,
+          "widthName": 64,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747491637980,
+          "createAt": 1747476448777
+        }
+      },
+      "oEJm-tYTNQXWuxHfNZV2j": {
+        "id": "oEJm-tYTNQXWuxHfNZV2j",
+        "tableId": "Xiz9lg8zDWaOH34saUX0u",
+        "name": "call_type_name",
+        "comment": "(Назание типа звонка - входящий / исходящий)",
+        "dataType": "varchar(20)",
+        "default": "",
+        "options": 4,
+        "ui": {
+          "keys": 0,
+          "widthName": 84,
+          "widthComment": 270,
+          "widthDataType": 63,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747476572645,
+          "createAt": 1747476455951
+        }
+      },
+      "Fpvb7XEsjZhhmKKvvkVBy": {
+        "id": "Fpvb7XEsjZhhmKKvvkVBy",
+        "tableId": "Xiz9lg8zDWaOH34saUX0u",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747476514968,
+          "createAt": 1747476514968
+        }
+      },
+      "k6EqPSAiXVQcOocefLd5H": {
+        "id": "k6EqPSAiXVQcOocefLd5H",
+        "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747476519351,
+          "createAt": 1747476519350
+        }
+      },
+      "x1nr7lvMWNRjqrkv2hCZr": {
+        "id": "x1nr7lvMWNRjqrkv2hCZr",
+        "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+        "name": "call_type_id",
+        "comment": "(ИД типа звонка)",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 64,
+          "widthComment": 100,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747476550606,
+          "createAt": 1747476537125
+        }
+      },
+      "fIuxvwLOEENNmcvzicvID": {
+        "id": "fIuxvwLOEENNmcvzicvID",
+        "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+        "name": "is_sended",
+        "comment": "(0 - Абонент не отправлен для тарификации / 1 - Абонент отправлен для тарификации)",
+        "dataType": "int",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 494,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747483501566,
+          "createAt": 1747482279350
+        }
+      },
+      "dUzwliBimSQ7Pp50z6HqJ": {
+        "id": "dUzwliBimSQ7Pp50z6HqJ",
+        "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+        "name": "description",
+        "comment": "(Информация об абоненте)",
+        "dataType": "varchar(50)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 62,
+          "widthComment": 155,
+          "widthDataType": 63,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747483795312,
+          "createAt": 1747483574939
+        }
+      },
+      "VeZptkCf7nJwjM-JBQosH": {
+        "id": "VeZptkCf7nJwjM-JBQosH",
+        "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+        "name": "head_entity_instance_id",
+        "comment": "(ИД сущности, которая является изначальным тарифом для данного абонента)",
+        "dataType": "int",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 129,
+          "widthComment": 454,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1747485097662,
+          "createAt": 1747484971536
+        }
+      }
+    },
+    "relationshipEntities": {
+      "z61ll4FKb8kZ28N0AtAZQ": {
+        "id": "z61ll4FKb8kZ28N0AtAZQ",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+          "columnIds": [
+            "ygkNboAqHuAeyEFPokXyG"
+          ],
+          "x": 1262.3964999999998,
+          "y": 728.0596,
+          "direction": 8
+        },
+        "end": {
+          "tableId": "yiqqk47lq3AcPMo5u17XB",
+          "columnIds": [
+            "spCPA7Fk2sou6ewSxLddV"
+          ],
+          "x": 1326.4724,
+          "y": 832.2489,
+          "direction": 4
+        },
+        "meta": {
+          "updateAt": 1746101641855,
+          "createAt": 1746101641855
+        }
+      },
+      "YdQpj0QPZNKMW6cVXvglL": {
+        "id": "YdQpj0QPZNKMW6cVXvglL",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "yiqqk47lq3AcPMo5u17XB",
+          "columnIds": [
+            "Q3pEaUfp45VqvvLpCKmbg"
+          ],
+          "x": 1326.4724,
+          "y": 1056.2489,
+          "direction": 8
+        },
+        "end": {
+          "tableId": "93_sbhyLnH0acZVXcAby6",
+          "columnIds": [
+            "KmMKOrdj4STIGXQgyI-Pz"
+          ],
+          "x": 1405.9628,
+          "y": 1156.9506,
+          "direction": 4
+        },
+        "meta": {
+          "updateAt": 1746101836732,
+          "createAt": 1746101836732
+        }
+      },
+      "yYJxuco7IqTfzvnemMQmO": {
+        "id": "yYJxuco7IqTfzvnemMQmO",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "Hf8jjqssAG_L0evv89ERJ",
+          "columnIds": [
+            "mQrJpG0sEh2a0ZHWyuTvV"
+          ],
+          "x": 368.1818,
+          "y": 774.8226,
+          "direction": 4
+        },
+        "end": {
+          "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+          "columnIds": [
+            "CrenvVP5c7sTktnDMzIgA"
+          ],
+          "x": 182.0692,
+          "y": 674.7889,
+          "direction": 8
+        },
+        "meta": {
+          "updateAt": 1747422378510,
+          "createAt": 1747422378510
+        }
+      },
+      "cIlcp6qMhoGermJkiBa4k": {
+        "id": "cIlcp6qMhoGermJkiBa4k",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "Hf8jjqssAG_L0evv89ERJ",
+          "columnIds": [
+            "mQrJpG0sEh2a0ZHWyuTvV"
+          ],
+          "x": 578.1818000000001,
+          "y": 774.8226,
+          "direction": 4
+        },
+        "end": {
+          "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+          "columnIds": [
+            "J_skQELlFhhkw6p9pRyTN"
+          ],
+          "x": 500.0692,
+          "y": 674.7889,
+          "direction": 8
+        },
+        "meta": {
+          "updateAt": 1747422401627,
+          "createAt": 1747422401627
+        }
+      },
+      "5Ba1V3M_D-SLFuCT32rss": {
+        "id": "5Ba1V3M_D-SLFuCT32rss",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "Hf8jjqssAG_L0evv89ERJ",
+          "columnIds": [
+            "mQrJpG0sEh2a0ZHWyuTvV"
+          ],
+          "x": 683.1818000000001,
+          "y": 826.8226,
+          "direction": 2
+        },
+        "end": {
+          "tableId": "D3CYZ0-C0be4oSjOSi3nK",
+          "columnIds": [
+            "tj_e6Lq-LqBxpNAyWfIRe"
+          ],
+          "x": 839.8965,
+          "y": 544.0596,
+          "direction": 1
+        },
+        "meta": {
+          "updateAt": 1747422709714,
+          "createAt": 1747422709714
+        }
+      },
+      "NzBDFdYrMbDYL-b-ZXRkr": {
+        "id": "NzBDFdYrMbDYL-b-ZXRkr",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "Xiz9lg8zDWaOH34saUX0u",
+          "columnIds": [
+            "_2r-tiMVwLV9pptbXQCoy"
+          ],
+          "x": 447.2632,
+          "y": 302.80719999999997,
+          "direction": 8
+        },
+        "end": {
+          "tableId": "WlTRnfyHK0jO8Pox0Dmlx",
+          "columnIds": [
+            "x1nr7lvMWNRjqrkv2hCZr"
+          ],
+          "x": 341.0692,
+          "y": 402.7889,
+          "direction": 4
+        },
+        "meta": {
+          "updateAt": 1747476537125,
+          "createAt": 1747476537125
+        }
+      }
+    },
+    "indexEntities": {},
+    "indexColumnEntities": {},
+    "memoEntities": {}
+  }
+}
