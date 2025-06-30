@@ -1,0 +1,26 @@
+@startuml
+
+title: Use case diagram
+left to right direction
+
+actor "Менеджер" as M
+actor "Абонент" as C
+
+(Авторизация менеджера) as crm1
+(Получение информации об абоненте) as crm2
+(Создание абонента) as crm3
+(Смена тарифа) as crm4
+(Пополнение баланса менеджером) as crm5
+(Авторизация абонента) as crm6
+(Пополнение баланса абонентом) as crm7
+
+M -- crm1
+M -- crm2
+M -- crm3
+crm2 ..> crm4:extend
+crm2 ..> crm5:extend
+
+C -- crm6
+C -- crm7
+
+@enduml 
